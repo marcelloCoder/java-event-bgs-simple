@@ -6,6 +6,10 @@ public abstract class Pessoa {
     private String email;
     private String cpf;
 
+    public Pessoa(){
+
+    }
+
     protected Pessoa(Long id,String nome,String email,String cpf){
         this.id=id;
         this.nome=nome;
@@ -21,6 +25,9 @@ public abstract class Pessoa {
     public void setEmail(String email){this.email=email;}
     public String getCpf(){return cpf;}
     public void setCpf(String cpf){this.cpf=cpf;}
+    public static boolean validarEmail(String email){
+        return email!=null && email.contains("@") && email.endsWith(".com");
+    }
 
     @Override
     public String toString(){
